@@ -15,8 +15,9 @@ class Home extends Component {
       device: ""
     };
     this.manager = new BleManager();
-    this.CHARACTERISTIC_ARRAY = [];
+    
   }
+  CHARACTERISTIC_ARRAY = [];
   componentWillMount() {
     const subscription = this.manager.onStateChange(state => {
       console.log(state);
@@ -131,8 +132,10 @@ class Home extends Component {
             .map(ite => {
               return ite.trim();
             });
-          console.log(this.CHARACTERISTIC_ARRAY)
+          console.log(charOneArray);
+          
           this.setState({ one: charOneArray });
+          // console.log(this.state.one)
         });
 
         this.characteristicTwo().subscribe(char => {
@@ -142,18 +145,19 @@ class Home extends Component {
             .map(ite => {
               return ite.trim();
             });
-          this.setState({ two: charTwoArray });
+            this.setState({ two: charTwoArray });
+
+            // evaluate(this.state.one[1], this.state.two[2], this.state.one[3], this.state.two[0], this.state.two[1], this.state.two[2])
         });
 
-        this.characteristicThree().subscribe(char => {
-          let charThreeArray = atob(char)
-            .trim()
-            .split(",")
-            .map(ite => {
-              return ite.trim();
-            });
-          this.setState({ three: charThreeArray });
-        });
+        // this.characteristicThree().subscribe(char => {
+        //   let charThreeArray = atob(char)
+        //     .trim()
+        //     .split(",")
+        //     .map(ite => {
+        //       return ite.trim();
+        //     });
+        // });
 
       }
 
@@ -172,7 +176,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log("render");
 
     return (
       <View>

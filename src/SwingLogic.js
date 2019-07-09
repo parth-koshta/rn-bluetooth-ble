@@ -3,7 +3,7 @@ let Y = [], X = [], Z = [], A_MAG = [], TIME = [], negative_to_positve = [], pos
 let swing = {};
 
 export default function evaluate(x, y, z, ax, ay, az) {
-    // console.log("inside eval calculating swing....")
+    console.log("inside eval calculating swing....")
 
     Y.push(y);
     X.push(x);

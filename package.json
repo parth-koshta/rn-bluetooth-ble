@@ -10,7 +10,7 @@
   "dependencies": {
     "node-pre-gyp": "^0.13.0",
     "react": "16.8.6",
-    "react-native": "0.60.0",
+    "react-native": "0.62.3",
     "react-native-ble-plx": "^1.0.3",
     "rxjs": "^6.5.2"
   },
